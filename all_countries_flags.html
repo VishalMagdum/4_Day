@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Country Flags</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+    // 2. Use the rest countries api https://restcountries.eu/rest/v2/all and display all the country flag in console
+
+
+     var xmlRequest = new XMLHttpRequest();
+
+     xmlRequest.open('GET','https://restcountries.com/v2/all',true);
+
+     xmlRequest.send();
+
+     xmlRequest.onload = function(){
+        var data = JSON.parse(xmlRequest.response)
+   console.log(data[0])
+        for(var index of data){
+            
+            console.log("name of country:  "+index.name +" flag: "+ index.flags.svg)
+        }
+
+
+     }
+
+
+
+    </script>
+</body>
+</html>

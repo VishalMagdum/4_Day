@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare JSON</title>
+</head>
+<body>
+    
+
+    <script>
+
+
+var obj1 ={
+    name:"Person1",
+    age:5
+}
+
+var obj2 ={
+    age:5,
+    name:"Person1"
+    
+}
+var obj3 ={
+    age:5,
+    name:"Person3"
+    
+}
+// console.log(obj1==obj2)
+// console.log(JSON.stringify(obj1)=== JSON.stringify(obj2))
+
+ function compare(obj1,obj2){
+    
+    let allkeyObj1 = Object.keys(obj1);
+    
+    if (allkeyObj1.length === Object.keys(obj2).length){
+        
+        return allkeyObj1.every(key => obj2.hasOwnProperty(key) && obj2[key]===obj1[key]);
+        
+        
+    }else{
+    
+    return false;
+    }
+    
+   
+}; 
+console.log(compare(obj1,obj2));
+console.log(compare(obj1,obj3));
+
+
+    </script>
+</body>
+</html>
